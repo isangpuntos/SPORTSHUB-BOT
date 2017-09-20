@@ -69,7 +69,7 @@ restService.post('/webhook', function(req, res) {
 						}
 					  ]
 					});
-		res.send(sampleResponse);
+		res.send({ "text": "Hi. " + (Math.random() * 5 + 1).toFixed(0) + " is a lucky number..." });
 	
 });
 
