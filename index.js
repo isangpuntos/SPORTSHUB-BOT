@@ -30,7 +30,7 @@ restService.use(bodyParser.json());
 
 restService.post('/webhook', function(req, res) {
     console.log(req);
-	sampleResponse = [];
+	var sampleResponse = [];
 	sampleResponse.push({
 					 "messages": [
 						{
@@ -69,7 +69,7 @@ restService.post('/webhook', function(req, res) {
 						}
 					  ]
 					});
-		res.send({ "text": "Hi. " + (Math.random() * 5 + 1).toFixed(0) + " is a lucky number..." });
+		res.send(sampleResponse);
 	
 });
 
