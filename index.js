@@ -30,7 +30,8 @@ restService.use(bodyParser.json());
 
 restService.post('/webhook', function(req, res) {
     console.log(req);
-	sampleResponse = {
+	sampleResponse = [];
+	sampleResponse.push({
 					 "messages": [
 						{
 						  "attachment":{
@@ -67,7 +68,7 @@ restService.post('/webhook', function(req, res) {
 						  }
 						}
 					  ]
-					}
+					});
 		res.send(sampleResponse);
 	
 });
