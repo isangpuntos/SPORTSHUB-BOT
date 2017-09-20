@@ -29,50 +29,47 @@ restService.use(bodyParser.urlencoded({
 restService.use(bodyParser.json());
 
 restService.post('/webhook', function(req, res) {
-    console.log(req);
-	var sampleResponse = [];
-	sampleResponse.push({
-					 "messages": [
-						{
-						  "attachment":{
-							"type":"template",
-							"payload":{
-							  "template_type":"generic",
-							  "elements":[
-								{
-								  "title":"Chatfuel Rockets T-Shirt",
-								  "image_url":"https://rockets.chatfuel.com/img/shirt.png",
-								  "subtitle":"Soft white cotton t-shirt with CF Rockets logo",
-								  "buttons":[
+    console.log("REQUEST!!!!");
+	var sampleResponse = {
+						 "messages": [
+							{
+							  "attachment":{
+								"type":"template",
+								"payload":{
+								  "template_type":"generic",
+								  "elements":[
 									{
-									  "type":"web_url",
-									  "url":"https://rockets.chatfuel.com/store/shirt",
-									  "title":"View Item"
-									}
-								  ]
-								},
-								{
-								  "title":"Chatfuel Rockets Hoodie",
-								  "image_url":"https://rockets.chatfuel.com/img/hoodie.png",
-								  "subtitle":"Soft grey cotton hoddie with CF Rockets logo",
-								  "buttons":[
+									  "title":"Chatfuel Rockets T-Shirt",
+									  "image_url":"https://rockets.chatfuel.com/img/shirt.png",
+									  "subtitle":"Soft white cotton t-shirt with CF Rockets logo",
+									  "buttons":[
+										{
+										  "type":"web_url",
+										  "url":"https://rockets.chatfuel.com/store/shirt",
+										  "title":"View Item"
+										}
+									  ]
+									},
 									{
-									  "type":"web_url",
-									  "url":"https://rockets.chatfuel.com/store/hoodie",
-									  "title":"View Item"
+									  "title":"Chatfuel Rockets Hoodie",
+									  "image_url":"https://rockets.chatfuel.com/img/hoodie.png",
+									  "subtitle":"Soft grey cotton hoddie with CF Rockets logo",
+									  "buttons":[
+										{
+										  "type":"web_url",
+										  "url":"https://rockets.chatfuel.com/store/hoodie",
+										  "title":"View Item"
+										}
+									  ]
 									}
 								  ]
 								}
-							  ]
+							  }
 							}
-						  }
-						}
-					  ]
-					});
-		//res.send(sampleResponse);
-		var jsonResponse = [];
-		jsonResponse.push({ "text": "Hi. " + (Math.random() * 5 + 1).toFixed(0) + " is a lucky number..." });
-		res.send(jsonResponse);
+						  ]
+						};
+		console.log(sampleResponse);
+		res.send(sampleResponse);
 	
 });
 
